@@ -70,13 +70,13 @@ c**********************************************************
       eps3=eps2/4d0
 
 
-      open(91,file='harm.txt',form='formatted')
-  74  format(2i5,e25.15)     
+      !open(91,file='harm.txt',form='formatted')
+c     ! 74  format(2i5,e25.15)     
 c     PREPARING CURRENT HARMONIC
       do l=1,lm1 
           do i=2,2*im1 
 	      har(i,l) = ph(i,lk,l)
-              write(91,74) i,l,har(i,l)
+              !write(91,74) i,l,har(i,l)
 	  enddo
           har(1,l) = 0.0d0
       enddo
