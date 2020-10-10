@@ -80,7 +80,7 @@ c     PREPARING CURRENT HARMONIC
 	  enddo
           har(1,l) = 0.0d0
       enddo
-      stop
+      !stop
 
       if(k.eq.-1) goto 2557
  
@@ -160,7 +160,8 @@ c     GROUND LAYER
     	  call progon(1,s1,s6) 
           l2=1 
           if(s6.lt.eps3) goto 17 
-
+      print*,'after ground layer'
+      !stop
 
 c     HIGHER LAYERS 
       do 15 l=2,lm 
@@ -176,7 +177,10 @@ c     HIGHER LAYERS
       if(s6.lt.eps3) goto 17 
 	
    15 continue 
-   17 continue 
+   17 continue
+
+      print*,'iteration loop'
+      !stop
 
       s2=abs(s5-s1)+1d-8 
       s2=s1*s5/s2 
@@ -237,8 +241,9 @@ c#######################################
 
     
 
-      if(dlev.ge.5) write(65,*) 'harmonic ',k,' local ',lk,
-     =                          ' done ',lep(lk)
+      print*, 'harmonic ',k,' local ',lk,' done ',lep(lk)
+      !stop
+      k = -1
 
 c##########################################
  2557 if(k.eq.-1) then
@@ -257,6 +262,7 @@ c##########################################
                c4dens(i)=0.0d0 
             endif 
          enddo
+      ! endif
 
 c      if(k.eq.1) then
          do l = 1,lm1
@@ -266,7 +272,8 @@ c      if(k.eq.1) then
          do i = 1,2*im1
 	      x(i,lm1) = har(i,lm1)
 	   enddo  
-
+         print*,'neuwrap'
+           stop
 	   call neuwrap(hr,hz,left,cent,righ,c4dens,x)
 
          do l = 1,lm1
