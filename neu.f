@@ -25,7 +25,8 @@ c     =                       	 fr1,fr2,fz1,fzul,fzuu,b,u1)
       common/ntc/nt
 	common/bounds/bfz1,bfz2,bfr1,bfr2
 
-
+      print*,'in neuwrap'
+      stop
       do i = 1,im+2
 	   do k = 0,lm
 	      b(i,k) = 0d0

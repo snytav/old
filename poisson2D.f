@@ -273,7 +273,7 @@ c      if(k.eq.1) then
 	      x(i,lm1) = har(i,lm1)
 	   enddo  
          print*,'neuwrap'
-           stop
+           !stop
 	   call neuwrap(hr,hz,left,cent,righ,c4dens,x)
 
          do l = 1,lm1
