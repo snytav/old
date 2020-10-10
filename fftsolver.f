@@ -14,15 +14,30 @@ c     u              - solution
 	real*8 fr1(0:lm),fr2(0:lm),fz1(im+2),fz2(im+2)
 	real*8 cent1(im+2),left1(im+2),righ1(im+2)
 	complex*16 wsave(3*lm),a(2*lm)
-	integer i,k
+	integer i,k,l
 	common/www/wsave
 
       print*,'in neumannsolver ' 
-      stop
+      !top
 c        call zfft1d(a,2*lm,0,wsave)
 
 
       pi=3.14159265358979d0 
+
+      open(91,file='b.txt',form='formatted')
+      open(92,file='condrad.txt',form='formatted')
+
+ 282  format(2i5,e25.15)
+ 283  format(i5,2e25.15)
+      do i = 1,im+2
+         do l = 0,lm
+            write(91,282) i,l,b(i,l)
+         enddo
+         write(92,283) i,fr1(i),fr2(i)
+      enddo
+      close(91)
+      close(92)
+
 
 	hz2 = hz*hz
 	hx2 = hx**2
@@ -69,8 +84,8 @@ ccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 	   u(1,k)    = fr1(k)
 	   u(im+2,k) = fr2(k)
 	enddo
-    	
-	end
+    	stop
+	end subroutine neumannsolver
 
 
       subroutine crprogon(a,b,c,x,f) 
