@@ -1,0 +1,13 @@
+ read physical data
+ preparing output files
+ output files prepared
+ start procedure begins
+ computing boundary conditions
+ computed R boundary conditions
+ computed Z boundary conditions
+ computed Z boundary conditions
+ preparing distribution
+ direct FFT
+ FFT finished
+ starting Poisson            0
+ Poisson prepared

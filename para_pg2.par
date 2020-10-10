@@ -1,0 +1,2 @@
+      parameter(procs=1,parakm = km/procs,dlev=6,n_p=110000,
+     +          puasfile=98,im3=200)

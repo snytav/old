@@ -1,0 +1,15 @@
+ifort *.f -o pg
+for i in 0.1 1.0 2.5 3.0 3.5 3.7 4.0 5.0 
+do 
+RunDir=disp_$i
+echo $RunDir
+
+mkdir $RunDir
+./start $i
+cp pgstart9.dat $RunDir 
+cp pg $RunDir
+cp *.sta $RunDir
+cd $RunDir
+mpirun -np 1 pg -maxtime 300
+cd ..
+done

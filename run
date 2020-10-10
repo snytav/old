@@ -1,0 +1,8 @@
+rm -r RunDir
+f95 *.f -o pg
+mkdir RunDir
+cp pgstart9.dat RunDir 
+cp pg RunDir
+cp *.sta RunDir
+cd RunDir
+./pg

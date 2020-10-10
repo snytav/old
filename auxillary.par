@@ -1,0 +1,8 @@
+      parameter(zh=1,fmom=1,fen=1,fsave=0,
+     +       fcen=0,fgas=0,ffall=0,dynflag=0,
+     +       pot3d=0,fwin=1,
+     +       pard=1,parfour=0,parv=0,
+     +       gasd=0,gasv=0,
+     +       rdisp=0,pdisp=0,rotc=0,
+     +       rflow=0,rvel=0,
+     +       cx=0.0000d+00,cy=0.0000d+00,dx=3.0000d+00,dy=3.0000d+00)

@@ -1,0 +1,3 @@
+            integer mm,im1,nk,km,km2,lm1
+            parameter(mm=3)
+            parameter(im1=61,nk=7,km=2**nk,km2=km+2,lm1=2**(nk-1)+1)
