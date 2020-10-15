@@ -1,0 +1,10 @@
+Towards 3D hybride solver
+
+1. All the arrays being read from files set as parameters, read them from testbench script
+2. Convert forward and inverse FFT subroutine loops 
+3. Change both to Matlab fftn functions
+4. Change left and righ to those of uniform grid and reproduce result from K2D solver
+5. 3D:
+	a. Change transforms to 2D and add one more eigenvalue
+        b. apply the method from Succi program to X and solve the resulting withe the solver.
+	c. Try both ones from backward
