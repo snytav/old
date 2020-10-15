@@ -72,9 +72,15 @@ end
 u = f*(2/lm);
     
 %ccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-for k = 1,lm+1
+for k = 1:lm+1
 	u(1,k)    = fr1(k);
 	u(im+2,k) = fr2(k);
 end
+
+uf = dlmread('uf.txt');
+u1 = reshape(uf,im+2,lm+1);
+u2 = reshape(u',(im+2)*(lm+1),1);
+
+[m,i] = max(abs(u2-uf));
 
 end 

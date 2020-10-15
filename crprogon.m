@@ -15,7 +15,7 @@ for i=2:im+2
 end
 
 
-x(im+2) = be(im+2)
+x(im+2) = be(im+2);
 for i=im+1:-1:2 
     x(i)=al(i)*x(i+1)+be(i);
 end 
