@@ -4,6 +4,7 @@ Towards 3D hybride solver
 2. Convert forward and inverse FFT subroutine loops 
 3. Change both to Matlab fftn functions
 4. Change left and righ to those of uniform grid and reproduce result from K2D solver
+4a. Check solution 2D with MIT example
 5. 3D:
 	a. Change transforms to 2D and add one more eigenvalue
         b. apply the method from Succi program to X and solve the resulting withe the solver.
