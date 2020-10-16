@@ -26,18 +26,38 @@ c        call zfft1d(a,2*lm,0,wsave)
 
       open(91,file='b.txt',form='formatted')
       open(92,file='condrad.txt',form='formatted')
+      open(93,file='condz.txt',form='formatted')
 
  282  format(2i5,e25.15)
  283  format(i5,2e25.15)
+ 284  format(i5,3e25.15)
+
       do i = 1,im+2
          do l = 0,lm
             write(91,282) i,l,b(i,l)
          enddo
-         write(92,283) i,fr1(i),fr2(i)
+!        write(92,283) i,fr1(i),fr2(i)
+      enddo
+
+      do l = 0,lm
+         write(92,283) l,fr1(l),fr2(l)
       enddo
       close(91)
       close(92)
 
+      do i = 1,im+2
+         write(93,283) i,fz1(i),fz2(i)
+      enddo
+      close(93)
+
+      open(91,file='hxhz.txt',form='formatted')
+      write(91,283) 0,hx,hz
+      close(91)
+      open(91,file='lcr.txt',form='formatted')
+      do i=1,im+2
+         write(91,284) i,left(i),cent(i),righ(i)
+      enddo
+      close(91)
 
 	hz2 = hz*hz
 	hx2 = hx**2
@@ -84,6 +104,14 @@ ccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 	   u(1,k)    = fr1(k)
 	   u(im+2,k) = fr2(k)
 	enddo
+
+        open(91,file='u_final.txt',form='formatted')
+        do i = 1,im+2
+           do l = 0,lm
+              write(91,282) i,l,u(i,l)
+           enddo
+        enddo
+        close(91)
     	stop
 	end subroutine neumannsolver
 

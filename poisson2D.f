@@ -272,8 +272,12 @@ c      if(k.eq.1) then
          do i = 1,2*im1
 	      x(i,lm1) = har(i,lm1)
 	   enddo  
-         print*,'neuwrap'
-           !stop
+
+
+
+
+       continue
+
 	   call neuwrap(hr,hz,left,cent,righ,c4dens,x)
 
          do l = 1,lm1

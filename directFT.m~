@@ -1,0 +1,22 @@
+function [fh] = directFT(b,fh,i)
+
+for k = 0:lm
+	fh(i,k+1) = 0
+
+	if(k == 0 or k == lm
+		     rho(k) = 0.5d0*b(i,k)
+            else
+		     rho(k) = 1d0*b(i,k)
+            endif
+	enddo
+
+      call wrapDirectFFTc(rho,fhw)
+
+      do k = 0,lm
+	   do j = 0,lm
+c	      fh(i,k) = fh(i,k) + rho(j)*dcos(k*pi*j/lm)
+	   enddo
+	   fh(i,k) = fhw(k)
+	enddo
+
+      end
