@@ -43,11 +43,13 @@ for k = 0:lm
 	b(im+1,k+1) = b(im+1,k+1) - righ(im+1)*fr2(k+1)*hx2;
 end
 
+fh = directFT2D(b);
+
 left1 = zeros(im+2,1);
 righ1 = zeros(im+2,1);
-fh = zeros(im+2,lm+1);
+% fh = zeros(im+2,lm+1);
 for i = 2:im+1
-	fh(i,:) = directFT(b,i);
+% 	fh(i,:) = directFT(b,i);
 	left1(i) = left(i)*hx2;
 	righ1(i) = righ(i)*hx2;
 end
