@@ -65,12 +65,13 @@ for k = 0:lm
 %ccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 end 
 
-f = zeros(im+2,lm+1);
-
-for i = 2:im+1
-	fhw = inverseFT(u,i);
-    f(i,:) = fhw;
-end
+f = inverseFT2D(u);
+% f = zeros(im+2,lm+1);
+% 
+% for i = 2:im+1
+% % 	fhw = inverseFT(u,i);
+%     f(i,:) = fhw;
+% end
 u = f*(2/lm);
     
 %ccccccccccccccccccccccccccccccccccccccccccccccccccccccc
